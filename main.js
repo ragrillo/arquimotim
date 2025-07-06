@@ -6,22 +6,18 @@ document.addEventListener('DOMContentLoaded', () =>{
     const btnCD = document.getElementById('btn-c-')
     const btnII = document.getElementById('btn-i+')
     const btnID = document.getElementById('btn-i-')
+    const btnReiniciar = document.getElementById('reiniciar')
 
     let valorColetivo = 30
     let valorIndividuo = 15
 
-
-   function reiniciarPlacar(){
-    coletivoPlacar.textContent = valorColetivo;
-    individuoPlacar.textContent = valorIndividuo;
-}
  
- reiniciarPlacar()
 
   function updateContador(){
     coletivoPlacar.textContent = valorColetivo
     individuoPlacar.textContent = valorIndividuo
   }
+  updateContador()
 
   btnCI.addEventListener('click', ()=>{
     valorColetivo++;
@@ -37,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () =>{
   })
   btnID.addEventListener('click', ()=>{
     valorIndividuo--;
+    updateContador()
+  })
+  btnReiniciar.addEventListener('click', ()=>{
+    valorColetivo = 30
+    valorIndividuo = 15
     updateContador()
   })
   
